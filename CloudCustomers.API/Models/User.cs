@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CloudCustomers.API.Models
+﻿namespace CloudCustomers.API.Models
 {
     public class User
     {
@@ -12,6 +6,5 @@ namespace CloudCustomers.API.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public Address Address { get; set; }
-
     }
 }

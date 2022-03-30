@@ -24,6 +24,6 @@ public class UsersController : ControllerBase
             return Ok(users);
         }
 
-        return NotFound();        
+        return NotFound();
     }
 }

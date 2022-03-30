@@ -1,11 +1,6 @@
 ﻿using CloudCustomers.API.Config;
 using CloudCustomers.API.Models;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CloudCustomers.API.Services
 {
@@ -13,6 +8,7 @@ namespace CloudCustomers.API.Services
     {
         public Task<List<User>> GetAllUsers();
     }
+
     public class UsersService : IUserService
     {
         private readonly HttpClient _httpClient;
@@ -34,7 +30,7 @@ namespace CloudCustomers.API.Services
 
             var responseContent = usersResponse.Content;
             var allUsers = await responseContent.ReadFromJsonAsync<List<User>>();
-            return allUsers.ToList();            
+            return allUsers.ToList();
         }
     }
 }

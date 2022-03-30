@@ -39,7 +39,7 @@ public class TestUsersService
         handlerMock
             .Protected()
             .Verify(
-            "SendAsync", 
+            "SendAsync",
             Times.Exactly(1),
             ItExpr.Is<HttpRequestMessage>(req => req.Method == HttpMethod.Get),
             ItExpr.IsAny<CancellationToken>());
@@ -101,7 +101,7 @@ public class TestUsersService
             Endpoint = endpoint
         });
 
-        var sut = new UsersService(httpClient,config);
+        var sut = new UsersService(httpClient, config);
 
         // Act
         var result = await sut.GetAllUsers();
@@ -125,7 +125,6 @@ public class TestUsersService
             Endpoint = endpoint
         });
 
-
         var sut = new UsersService(httpClient, config);
 
         // Act
@@ -138,7 +137,7 @@ public class TestUsersService
             "SendAsync",
             Times.Exactly(1),
             ItExpr.Is<HttpRequestMessage>(
-                req => req.Method == HttpMethod.Get 
+                req => req.Method == HttpMethod.Get
                 && req.RequestUri.ToString() == endpoint),
             ItExpr.IsAny<CancellationToken>());
     }

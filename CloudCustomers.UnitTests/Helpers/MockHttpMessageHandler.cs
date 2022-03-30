@@ -82,5 +82,5 @@ internal static class MockHttpMessageHandler<T>
             .ReturnsAsync(mockResponse);
 
         return handlerMock;
-    }    
+    }
 }
